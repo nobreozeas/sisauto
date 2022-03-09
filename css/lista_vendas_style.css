@@ -1,0 +1,19 @@
+#menu_vendas {
+    border: 1px solid gray;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.canvas {
+    width: 80%;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 200px;
+    height: 100px;
+    border-radius: 5px;
+}
