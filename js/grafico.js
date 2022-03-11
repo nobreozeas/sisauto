@@ -19,7 +19,7 @@ $('document').ready(function() {
 });
 
 function grafico(data_v, total) {
-    const ctx = document.getElementById('myChart').getContext('2d');
+    const ctx = document.getElementById('myChart');
     const myChart = new Chart(ctx, {
         type: 'bar',
         data: {

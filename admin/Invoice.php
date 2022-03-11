@@ -133,7 +133,19 @@ class Invoice{
 		$result = mysqli_query($this->dbConnect, $sqlQuery);	
 		$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 		return $row;
-	}	
+	}
+
+	public function getVenda($id_venda){
+		$sqlQuery = "SELECT v.id_venda, v.data_venda, v.total_venda, v.forma_pagamento, c.nome AS nome_cliente, c.documento, c.telefone, c.logradouro, c.bairro, c.numero, c.cep, c.cidade, c.estado, l.nome AS nome_usuario FROM vendas v LEFT JOIN cliente c ON v.id_cliente = c.id_cliente LEFT JOIN login l ON l.id_usuario = v.id_usuario WHERE v.id_venda = '$id_venda'";
+		$result = mysqli_query($this->dbConnect, $sqlQuery);	
+		$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+		return $row;
+	}
+	public function getVendaItem($id_venda){
+		$sqlQuery = "SELECT vp.id_produto, vp.qtd, vp.preco_venda, vp.total, p.nome FROM vendas_produtos vp JOIN produto p ON vp.id_produto = p.id_produto WHERE vp.id_venda = '$id_venda'";
+		return  $this->getData($sqlQuery);	
+	}
+
 	public function getInvoiceItems($invoiceId){
 		$sqlQuery = "
 			SELECT * FROM ".$this->ordemServicoItemTable." 

@@ -1,5 +1,5 @@
 var isNew = true;
-
+let estoque = 0;
 getCodigoProduto();
 
 function getCodigoProduto() {
@@ -17,6 +17,8 @@ function getCodigoProduto() {
 
                 $("#nome_produto").val(data[0].nome);
                 $("#preco_produto").val(data[0].preco_venda);
+                estoque = Number(data[0].qtd_estoque);
+
                 $("#quantidade_produto").focus();
                 document.getElementById("btnAddProd").disabled = false;
 
@@ -71,13 +73,17 @@ function adicionaProduto() {
 var total = 0.00;
 
 function addRow(produto) {
+    let qtd = $("#quantidade_produto").val();
 
     if ($("#codigo_produto").val().length == 0) {
         document.getElementById("btnAddProd").disabled = true;
         alert("Insira o Codigo do produto!");
 
 
+    } else if (estoque < qtd) {
+        alert("Produto com estoque menor que a quantidade desejada");
     } else {
+
         var $tableB = $("#listaProduto tbody");
         var $row = $(
             "<tr>" +
@@ -101,8 +107,8 @@ function addRow(produto) {
         total += Number(produto.total_produto);
         $('#total_venda').val(total);
     }
-
 }
+
 var total_venda;
 
 function removeLinha(obj) {

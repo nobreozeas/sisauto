@@ -22,6 +22,7 @@ $stmt = mysqli_query($conn, $sql);
                 <th>Cliente</th>
                 <th>Total</th>
                 <th>Pagamento</th>
+                <th>Ação</th>
             </thead>
 
             <tbody>
@@ -35,9 +36,7 @@ $stmt = mysqli_query($conn, $sql);
                         <td><?= $dado['nome'];?></td>
                         <td>R$ <?= number_format($dado['total_venda'], 2, ",", ".");?></td>
                         <td><?= $dado['forma_pagamento'];?></td>
-
-                        
-                    
+                        <td><a href="imprime_venda.php?id_venda=<?= $dado['id_venda']; ?>">print</a></td>
                 </tr>
                 <?php } ?>
             </tbody>
