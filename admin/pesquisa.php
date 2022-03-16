@@ -1,5 +1,8 @@
 <?php
-include 'Invoice.php';
+
+include("Invoice.php");
+$invoice = new Invoice();
+$invoice->checkLoggedIn();
 
 $palavra = $_POST['palavra'];
 

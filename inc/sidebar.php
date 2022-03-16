@@ -15,7 +15,7 @@
 
       <li>
           <div class="dropend">
-              <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-solid fa-screwdriver-wrench"></i>Ordem de Serviço</a>
+              <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-solid fa-wrench"></i>Ordem de Serviço</a>
 
                   <ul class="dropdown-menu" id="drop" aria-labelledby="dropdownMenuLink">
                       <li><a class="dropdown-item" href="lista_ordem_servico.php"><i class="fas fa-solid fa-list"></i>Listar OS</a></li>
@@ -47,8 +47,8 @@
       </li>
 
      
-      <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-solid fa-circle-question"></i>Ajuda</a></li>
-      <li><a href="action.php?action=logout"><i class="fa-solid fa-right-from-bracket"></i> Sair</a></li>
+      <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-solid fa-question"></i>Ajuda</a></li>
+      <li><a href="action.php?action=logout"><i class="fas fa-solid fa-power-off"></i>Sair</a></li>
   </ul>
 </div>
 

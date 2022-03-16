@@ -9,5 +9,4 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/sidebar_style.css">
     <link rel="stylesheet" href="../css/lista_vendas_style.css">
-    <script src="https://kit.fontawesome.com/de60892fbf.js" crossorigin="anonymous"></script>
 </head>

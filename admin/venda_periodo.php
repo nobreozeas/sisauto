@@ -1,5 +1,8 @@
 <?php
+session_start();
 include("Invoice.php");
+$invoice = new Invoice();
+$invoice->checkLoggedIn();
 
 $data_inicial = $_POST['data_inicial'];
 $data_final = $_POST['data_final'];

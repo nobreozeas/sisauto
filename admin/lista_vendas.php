@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 include 'Invoice.php';
 $invoice = new Invoice();
 $invoice->checkLoggedIn();
@@ -27,22 +26,26 @@ $resulta_consulta = mysqli_query($conn, $consulta);
                         <div class="row g-3">
                             <div class="col-md-3">
                                 <label for="">De:</label>
-                                <input type="date" name="data_inicial" class="form-control" placeholder="First name" aria-label="First name">
+                                <input type="date" name="data_inicial" class="form-control">
                             </div>
                             <div class="col-md-3">
                                 <label for="">Até:</label>
-                                <input type="date" name="data_final" class="form-control" placeholder="Last name" aria-label="Last name">
+                                <input type="date" name="data_final" class="form-control">
                             </div>
                             <div class="col-md-3">
                                 <input style="margin-top: 23px;" type="submit" class="form-control btn btn-primary" value="Buscar">
                             </div>
                         </div>
                     </form>
-                    <form>
-                        <label class="form-label">Pesquisar Venda:</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Insira o codigo da venda" aria-describedby="button-addon2">
-                            <button class="btn btn-primary" type="submit" id="button-addon2">Pesquisar</button>
+                    <form class="form-inline" action="get_venda.php" method="GET">
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <label for="">Pesquisar Venda:</label>
+                                <input type="text" name="id_venda" class="form-control" placeholder="Insira o numero da venda">
+                            </div>
+                            <div class="col-md-3">
+                                <input style="margin-top: 23px;" type="submit" class="form-control btn btn-primary" value="Buscar">
+                            </div>
                         </div>
                     </form>
 

@@ -57,7 +57,7 @@ class Invoice{
 	}	
 	public function checkLoggedIn(){
 		if(!$_SESSION['id_usuario']) {
-			header("Location:dash.php");
+			header("Location:../index.php");
 		}
 	}	
 
@@ -164,6 +164,21 @@ class Invoice{
 			WHERE id_ordem_servico = '".$invoiceId."'";
 		mysqli_query($this->dbConnect, $sqlQuery);	
 		$this->deleteInvoiceItems($invoiceId);	
+		return 1;
+	}
+
+	public function deleteVendaitens($id_venda){
+		$sqlQuery = "
+			DELETE FROM vendas_produtos
+			WHERE id_venda = '".$id_venda."'";
+		mysqli_query($this->dbConnect, $sqlQuery);				
+	}
+	public function deleteVenda($id_venda){
+		$sqlQuery = "
+			DELETE FROM vendas 
+			WHERE id_venda = '".$id_venda."'";
+		mysqli_query($this->dbConnect, $sqlQuery);	
+		$this->deleteVendaitens($id_venda);	
 		return 1;
 	}
 
